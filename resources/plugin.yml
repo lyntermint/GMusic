@@ -1,0 +1,70 @@
+name: ${name}
+version: ${version}
+description: ${description}
+authors: [Gecolay]
+contributors: [lyntermint]
+website: https://github.com/Gecolay/GMusic
+main: ${main}
+api-version: 1.18
+folia-supported: true
+
+commands:
+
+  gmusic:
+
+    usage: /<command> play|playing|random|stop|pause|resume|skip|toggle
+    aliases: [music, gsong, song]
+    description: Music command
+    permission: GMusic.Music
+
+  gamusic:
+
+    usage: /<command>
+    aliases: [amusic]
+    description: AMusic command
+    permission: GMusic.AMusic
+
+  gmusicreload:
+
+    usage: /<command>
+    aliases: [gmusicrl]
+    description: Plugin reload command
+    permission: GMusic.Reload
+
+permissions:
+
+  GMusic.*:
+    default: op
+    description: GMusic | Permissions
+    children:
+      GMusic.Music: true
+      GMusic.AMusic: true
+      GMusic.Update: true
+      GMusic.Reload: true
+
+  GMusic.Music:
+    default: true
+    description: Music command | Permission
+
+  GMusic.AMusic.*:
+    default: op
+    description: AMusic | Permission
+    children:
+      GMusic.AMusic: true
+      GMusic.AMusic.UseJukeBox: true
+
+  GMusic.AMusic:
+    default: op
+    description: AMusic command | Permission
+
+  GMusic.AMusic.UseJukeBox:
+    default: op
+    description: UseJukeBox | Permission
+
+  GMusic.Update:
+    default: op
+    description: Update notification | Permission
+
+  GMusic.Reload:
+    default: op
+    description: Plugin reload command | Permission

@@ -1,0 +1,12 @@
+## environment -->
+.vscode
+.idea
+.fleet
+.DS_Store
+## environment <--
+
+## build -->
+*.iml
+build
+.gradle
+## build <--
